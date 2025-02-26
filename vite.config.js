@@ -5,5 +5,5 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(),],
-  base: '/map-kampung-badransari', // Ganti dengan nama repo GitHub
+  base: '/e-katalog-moga-djaya', // Ganti dengan nama repo GitHub
 })
