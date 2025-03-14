@@ -1,7 +1,6 @@
 import SectionThree from "./Components/Fragments/SectionThree"
 import { useEffect, useRef, useState } from "react";
 import thumbnail2 from "./assets/thumbnail_2.png"
-import footer from "./assets/footer.png"
 import icon from "./assets/icon/md.png"
 import tahuKress from "./assets/products/tahu_kress.png"
 import halal from "./assets/icon/halal.png"
@@ -15,13 +14,14 @@ import klantingBuUpik from "./assets/products/klanting_bu_upik.png"
 import udangKressMinaDira from "./assets/products/udang_kress_mina_dira.png"
 import ususCrispyPedas from "./assets/products/usus_crispy_pedas.png"
 import eyekEyek from "./assets/products/eyek_eyek.png"
+import CardProduct from "./Components/Fragments/CardProduct";
 
 const categories = {
   1: {
     id: 1,
     name: "Snack",
     products: [
-      { title: "Tahu Kress", desc: "Tahu renyah dan gurih", img: tahuKress, variant: "Original" },
+      { title: "Tahu Kress", desc: "Tahu renyah dan gurih", img: tahuKress, variant: "Original", price: "Rp10.000,00" },
       { title: "Basreng Jebret Original", desc: "Komposisi: Tepung, Ikan & Bumbu", img: basrengJebret, variant: "Original" },
       { title: "Kerupuk Ikan Bantat", desc: "Oleh-oleh Khas Lampung", img: kerupukIkanBantatPedas, variant: "Pedas" },
       { title: "Usus Crispy", desc: "Oleh-oleh khas Lampung Tengah", img: ususCrispyPedas, variant: "Original" },
@@ -135,7 +135,7 @@ function App() {
             {Object.keys(categories).map((key) => (
               <button
                 key={key}
-                className={`px-8 py-2 border rounded-full font-semibold text-sm shadow-md transition-all duration-300 cursor-pointer outline-none border-none
+                className={`px-8 py-4 border rounded-full font-semibold text-sm shadow-md transition-all duration-300 cursor-pointer outline-none border-none
               ${selectedCategory.id === parseInt(key)
                     ? "bg-[#71b66d] text-white border-[#71b66d] shadow-lg"
                     : "border-slate-400 text-black hover:bg-[#71b66d] hover:border-[#71b66d] hover:text-white"}
@@ -151,21 +151,18 @@ function App() {
         <div className="max-w-full overflow-hidden">
           <div ref={scrollRef2} className="relative flex gap-6 overflow-x-auto scrollbar-hide px-4 py-6 cursor-grab scroll-smooth">
             {selectedCategory.products.map((product, index) => (
-              <div key={index} className="relative border border-gray-200 flex justify-between items-center flex-col max-w-[12rem] min-w-[12rem] min-h-[21rem] py-5 before:absolute before:top-0 before:left-0 before:w-[200%] before:h-[12rem] before:bg-[#71b66d] before:-z-10 before:-rotate-[20deg] before:-translate-16 overflow-hidden rounded-xl">
-                <div className="flex justify-start items-start w-full flex-col px-4 min-h-[5rem]">
-                  <h2 className="font-extrabold text-xl text-white font-poppins">{product.title}</h2>
-                  <p className="text-[0.8rem] text-white">{product.desc}</p>
-                </div>
-                <div className="w-[9.5rem] h-[4.5rem] rounded-full relative before:absolute before:w-[9.5rem] before:h-[9.5rem] before:bg-[#fff1d0] before:-z-10 before:rounded-full before:translate-x-2 before:-translate-y-1 flex justify-center items-center">
-                  <div className="group w-[9.5rem] h-[9.5rem] rounded-full flex justify-center items-center bg-white transition-colors duration-300 group-hover:bg-gray-200 cursor-pointer">
-                    <img src={product.img} alt={product.title} className="w-[9rem] object-contain transition-transform duration-300 group-hover:scale-130 group-hover:rotate-6" />
+              <div key={index} className='rounded-4xl overflow-hidden flex justify-center items-center flex-col min-w-[14rem] max-w-[14rem] min-h-[27rem] max-h-[27rem] shadow-xl border border-slate-300 font-poppins'>
+                <div className='max-w-[160%] min-w-[160%] min-h-[14rem] max-h-[13rem] bg-[#71b66d] rounded-b-[11rem] flex justify-center items-center flex-col'>
+                  <div className='w-[65%] flex justify-start items-center px-8 relative before:absolute before:w-8 before:h-[2px] before:bg-white before:-bottom-1 before:rounded-full'>
+                    <p className='text-sm text-white'>{product.variant}</p>
                   </div>
+                  <img src={product.img} alt="" className='w-44 h-44 object-cover' />
                 </div>
-                <div className="w-full flex justify-center items-end flex-col px-6 h-[10%] z-10">
-                  <div className="flex justify-center items-center text-[0.7rem] tracking-wider text-white min-w-[6rem] py-2 bg-[#71b66d] rounded-full hover:bg-white hover:text-[#71b66d] cursor-pointer hover:border hover:border-[#71b66d] box-border">
-                    <p>
-                      {product.variant}
-                    </p>
+                <div className=' h-1/2 bg-white flex flex-col justify-start items-center py-4'>
+                  <div className='w-[100%] flex flex-col justify-center items-center gap-2'>
+                    <p className='w-[80%] min-h-[3.5rem] font-bold text-xl text-center'>{product.title}</p>
+                    <p className='w-[80%] min-h-[3.7rem] text-sm flex justify-center items-center flex-col text-center'>{product.desc}</p>
+                    <p className='text-sm font-semibold py-1 px-4 bg-[#71b66d] rounded-xl text-white'>Rp.10.000,00</p>
                   </div>
                 </div>
               </div>
