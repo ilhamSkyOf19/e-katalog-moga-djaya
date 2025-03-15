@@ -14,8 +14,22 @@ import klantingBuUpik from "./assets/products/klanting_bu_upik.png"
 import udangKressMinaDira from "./assets/products/udang_kress_mina_dira.png"
 import ususCrispyPedas from "./assets/products/usus_crispy_pedas.png"
 import eyekEyek from "./assets/products/eyek_eyek.png"
-import CardProduct from "./Components/Fragments/CardProduct";
-
+import teriNasi from "./assets/products/teri_nasi_original.png"
+import basrengJebreetPedas from "./assets/products/basreng_jebreet_pedas.png"
+import fishStickSpinach from "./assets/products/fish_stick_spinach.png"
+import jaheNyuss from "./assets/products/jahe_nyuss.png"
+import kacangBawangOriginal from "./assets/products/kacang_bawang_original.png"
+import keripikPareOriginal from "./assets/products/keripik_pare_original.png"
+import keripikTempeOriginal from "./assets/products/keripik_tempe_original.png"
+import inKongKrezzPedas from "./assets/products/in_kong_krezz_pedas.png"
+import makaroniPedas from "./assets/products/makaroni_pedas.png"
+import stickIkan from "./assets/products/stick_ikan.png"
+import peyekUpikKacang from "./assets/products/peyek_upik_kacang.png"
+import upixBananaChip from "./assets/products/upix_banana_chip.png"
+import keripikMantangMadu from "./assets/products/keripik_mantang_madu.png"
+import opakMini from "./assets/products/opak_mini.png"
+import peyekKoinBuUpik from "./assets/products/peyek_koin_bu_upik_kedelai.png"
+import bgPrimary from "./assets/img/bg_primary.png"
 const categories = {
   1: {
     id: 1,
@@ -29,6 +43,14 @@ const categories = {
       { title: "Udang Kress Mina Dira", desc: "Bisa buat Camilan dan Lauk Makan", img: udangKressMinaDira, variant: "Original" },
       { title: "Iwak Kali Imut", desc: "Oleh-oleh Khas Lampung", img: iwakKaliImutMinaDira, variant: "Original" },
       { title: "Klanting Bu Upik", desc: "Oleh-oleh Khas Lampung", img: klantingBuUpik, variant: "Original" },
+      { title: "Teri Nasi", desc: "Komposisi: Ikan Teri, Tepung, Bumbu", img: teriNasi, variant: "Original" },
+      { title: "In-Kong Krezz", desc: "Komposisi: Singkong, Tepung, Bumbu, Dll", img: inKongKrezzPedas, variant: "Pedas" },
+      { title: "Stick Ikan", desc: "Komposisi: Ikan, Telur, Sagu, Terigu, Margarin, Santan, Bawang, Dll", img: stickIkan, variant: "Original" },
+      { title: "Basreng Jebreet Pedas", desc: "Komposisi: Tepung, Ikan, Bumbu", img: basrengJebreetPedas, variant: "Pedas" },
+      { title: "Makaroni", desc: "Komposisi: Makaroni, Tepung, Bumbu", img: makaroniPedas, variant: "Pedas" },
+      { title: "Kacang Bawang", desc: "Komposisi: Kacang Bawang, Garam, Bumbu", img: kacangBawangOriginal, variant: "Original" },
+      { title: "Fish Stick Spinach", desc: "Komposisi: Ikan, Bayam, Tepung, Bumbu", img: fishStickSpinach, variant: "Original" },
+
     ],
   },
   2: {
@@ -36,16 +58,32 @@ const categories = {
     name: "Kue",
     products: [
       { title: "Brownies Kering Mini", desc: "Dengan Taburan Springkel, Wijen dan Meses", img: browniesKeringMini, variant: "Original" },
-      { title: "Donat", desc: "Komposisi: Tepung, Bumbu & Gula", img: donat, variant: "Original" },
+      { title: "Donat Kress", desc: "Komposisi: Tepung, Bumbu, Gula", img: donat, variant: "War-Wir" },
+
     ],
   },
   3: {
     id: 3,
     name: "Keripik",
     products: [
-      { title: "Keripik Mantang", desc: "Komposisi: Mantang, Tepung & Garam", img: keripikMantang, variant: "Ubi Ungu" },
+      { title: "Keripik Mantang Ubi Ungu", desc: "Komposisi: Mantang, Tepung & Garam", img: keripikMantang, variant: "Ubi Ungu" },
+      { title: "Keripik Mantang Ubi Madu", desc: "Komposisi: Mantang, Tepung & Garam", img: keripikMantangMadu, variant: "Ubi Madu" },
+      { title: "Opak Mini", desc: "Komposisi: Singkong, Bumbu Penyedap", img: opakMini, variant: "Original" },
+      { title: "Peyek Upik", desc: "Komposisi: Tepung Beras, Bumbu", img: peyekUpikKacang, variant: "Kacang" },
+      { title: "Keripik Tempe", desc: "Komposisi: Tempe, Tapung, Sagu, Santan", img: keripikTempeOriginal, variant: "Original" },
+      { title: "Keripik Pare", desc: "Komposisi: Pare, Tepung, Garam, Bumbu", img: keripikPareOriginal, variant: "Original" },
+      { title: "Upix Banana Chip", desc: "Komposisi: Pisang Kepok, Minyak, Garam", img: upixBananaChip, variant: "Original Pisang Kepok" },
+      { title: "Peyek Koin Bu Upik", desc: "Komposisi: Tepung, santan, rempah-rempah, dan bahan pengisi seperti kacang", img: peyekKoinBuUpik, variant: "Kedelai" },
+
     ],
   },
+  4: {
+    id: 4,
+    name: "Serbuk Minuman",
+    products: [
+      { title: "Jahe Nyuss", desc: "Nikmat Diminum Selagi Hangat Atau Dingin Juga Bisa", img: jaheNyuss, variant: "Jahe Merah" },
+    ],
+  }
 };
 function App() {
 
@@ -54,7 +92,6 @@ function App() {
   const handleClickCategory = (categoryKey) => {
     setSelectedCategory(categories[categoryKey]);
   };
-
   const scrollRef1 = useRef(null);
   const scrollRef2 = useRef(null);
   const scrollRef3 = useRef(null);
@@ -126,7 +163,7 @@ function App() {
 
 
       {/* Section 2 */}
-      <div className="h-auto flex flex-col justify-start items-center py-14 gap-8 font-poppins">
+      <div className="h-auto flex flex-col justify-start items-center py-14 gap-8 font-poppins" style={{ backgroundImage: `url(${bgPrimary})`, backgroundPosition: "center", backgroundSize: "cover" }}>
         <div className="flex justify-center items-center flex-col">
           <div className="font-bold text-3xl">OUR PRODUCTS</div>
         </div>
@@ -135,10 +172,10 @@ function App() {
             {Object.keys(categories).map((key) => (
               <button
                 key={key}
-                className={`px-8 py-4 border rounded-full font-semibold text-sm shadow-md transition-all duration-300 cursor-pointer outline-none border-none
+                className={`px-8 py-2 border rounded-full font-semibold text-sm shadow-md transition-all duration-300 cursor-pointer outline-none border-none
               ${selectedCategory.id === parseInt(key)
                     ? "bg-[#71b66d] text-white border-[#71b66d] shadow-lg"
-                    : "border-slate-400 text-black hover:bg-[#71b66d] hover:border-[#71b66d] hover:text-white"}
+                    : "border-slate-400 text-black hover:bg-[#71b66d] hover:border-[#71b66d] hover:text-white bg-white"}
             `}
                 onClick={() => handleClickCategory(parseInt(key))}
               >
@@ -148,19 +185,19 @@ function App() {
           </div>
         </div>
 
-        <div className="max-w-full overflow-hidden">
-          <div ref={scrollRef2} className="relative flex gap-6 overflow-x-auto scrollbar-hide px-4 py-6 cursor-grab scroll-smooth">
+        <div className="max-w-full overflow-hidden bg-white">
+          <div ref={scrollRef2} className="relative flex gap-6 overflow-x-auto scrollbar-hide px-4 py-6 cursor-grab scroll-smooth bg-transparent" style={{ backgroundImage: `url(${bgPrimary})`, backgroundPosition: "center", backgroundSize: "cover" }}>
             {selectedCategory.products.map((product, index) => (
-              <div key={index} className='rounded-4xl overflow-hidden flex justify-center items-center flex-col min-w-[14rem] max-w-[14rem] min-h-[27rem] max-h-[27rem] shadow-xl border border-slate-300 font-poppins'>
-                <div className='max-w-[160%] min-w-[160%] min-h-[14rem] max-h-[13rem] bg-[#71b66d] rounded-b-[11rem] flex justify-center items-center flex-col'>
+              <div key={index} className='rounded-4xl overflow-hidden flex justify-center items-center flex-col min-w-[16rem] max-w-[16rem] min-h-[29rem] max-h-[29rem] shadow-lg border border-slate-300 font-poppins'>
+                <div className='max-w-[170%] min-w-[170%] min-h-[15rem] max-h-[15rem] bg-[#71b66d] rounded-b-[14rem] flex justify-center items-center flex-col'>
                   <div className='w-[65%] flex justify-start items-center px-8 relative before:absolute before:w-8 before:h-[2px] before:bg-white before:-bottom-1 before:rounded-full'>
                     <p className='text-sm text-white'>{product.variant}</p>
                   </div>
                   <img src={product.img} alt="" className='w-44 h-44 object-cover' />
                 </div>
-                <div className=' h-1/2 bg-white flex flex-col justify-start items-center py-4'>
+                <div className=' h-1/2 w-full bg-white flex flex-col justify-start items-center py-4 px-4'>
                   <div className='w-[100%] flex flex-col justify-center items-center gap-2'>
-                    <p className='w-[80%] min-h-[3.5rem] font-bold text-xl text-center'>{product.title}</p>
+                    <p className='w-[80%] min-h-[4rem] font-bold text-2xl text-center'>{product.title}</p>
                     <p className='w-[80%] min-h-[3.7rem] text-sm flex justify-center items-center flex-col text-center'>{product.desc}</p>
                     <p className='text-sm font-semibold py-1 px-4 bg-[#71b66d] rounded-xl text-white'>Rp.10.000,00</p>
                   </div>
@@ -174,7 +211,7 @@ function App() {
       {/* Section 3 */}
       < SectionThree halal={halal} md={icon} />
       {/* section 4 */}
-      <div className="h-[85vh] py-12 px-2 font-poppins flex justify-start items-center flex-col">
+      <div className="h-[85vh] py-12 px-2 font-poppins flex justify-start items-center flex-col" style={{ backgroundImage: `url(${bgPrimary})`, backgroundPosition: "center", backgroundSize: "cover" }}>
         <div className="min-w-[98%] flex justify-center items-center flex-col">
           <h2 className="font-bold text-xl uppercase text-white bg-[#71b66d] py-2 px-10 rounded-full translate-y-6 tracking-wider">Visi</h2>
           <p className="text-center bg-[#F5F5F5] py-12 px-4 text-sm font-light rounded-xl">Menjadi Perusahaan yang menyediakan produk olahan dengan cita rasa khas dengan kualitas yang unggul pada cita rasa serta memiliki ciri khas  dengan pengolahan yang baik</p>
@@ -193,7 +230,7 @@ function App() {
         </div>
       </div>
       {/* Section 5 */}
-      <div className="h-auto py-12 flex flex-col justify-start items-center gap-12 px-12">
+      <div className="h-auto py-12 flex flex-col justify-start items-center gap-12 px-12" style={{ backgroundImage: `url(${bgPrimary})`, backgroundPosition: "center", backgroundSize: "cover" }}>
         <h2 className="text-2xl font-extrabold py-2 px-10 rounded-full bg-[#71b66d] text-white text-center">Production Location</h2>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1405.117410382533!2d105.29689264708696!3d-5.059565738322031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40bb7eb677671b%3A0xff07feb66375eca8!2sMinaDira%20BadranSariCity!5e0!3m2!1sid!2sid!4v1740283640413!5m2!1sid!2sid"
@@ -233,19 +270,19 @@ function App() {
         </div>
         <div className="w-[50%] text-[0.5rem] flex flex-col justify-start items-start gap-1">
           <h1 className="text-[0.7rem] text-white font-bold">Social Media</h1>
-          <a href="https://www.facebook.com/mina.dira.54" class="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
+          <a href="https://www.facebook.com/mina.dira.54" className="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
             Facebook : Moga Djaya
           </a>
-          <a href="https://www.facebook.com/suprihatin.bio" class="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
+          <a href="https://www.facebook.com/suprihatin.bio" className="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
             Facebook : Suprihatinbio
           </a>
-          <a href="https://www.instagram.com/moga_djaya?igsh=MWxpdnY0aTVqbTJ4eg==" class="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
+          <a href="https://www.instagram.com/moga_djaya?igsh=MWxpdnY0aTVqbTJ4eg==" className="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
             Instagram : Aneka_Snack_Moga_Djaya
           </a>
-          <a href="https://www.instagram.com/suprihatinbio09?igsh=MWQwcjFtMW9mMGo1MA==" class="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
+          <a href="https://www.instagram.com/suprihatinbio09?igsh=MWQwcjFtMW9mMGo1MA==" className="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
             Instagram : Suprihatinbio
           </a>
-          <a href="https://www.tiktok.com/@moga_djaya?_t=ZS-8uEbh95L4HH&_r=1" class="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
+          <a href="https://www.tiktok.com/@moga_djaya?_t=ZS-8uEbh95L4HH&_r=1" className="relative text-white inline-block transition-all duration-300 hover:text-gray-200 after:block after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full">
             Tiktok : Aneka Snack Moga Djaya
           </a>
 
