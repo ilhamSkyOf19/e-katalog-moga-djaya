@@ -1,8 +1,32 @@
-# React + Vite
+# 🛒 Moga Djaya – Website Katalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Moga Djaya** adalah sebuah website katalog sederhana berbasis **React JS** (tanpa TypeScript) yang dibangun menggunakan toolchain modern **Vite**. Proyek ini berfungsi sebagai **landing page** untuk menampilkan profil usaha, produk, dan informasi dasar mengenai toko Moga Djaya.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖼️ Fitur Utama
+
+- 🎯 **Landing Page Sederhana & Informatif**  
+  Menyediakan tampilan awal yang elegan dan informatif untuk pengunjung.
+
+- 📦 **Katalog Produk**  
+  Menampilkan daftar produk atau layanan yang ditawarkan oleh Moga Djaya (opsional/placeholder jika belum ada produk dinamis).
+
+- 📱 **Desain Responsif**  
+  Dibangun dengan UI yang fleksibel agar tampil rapi di berbagai ukuran layar (desktop & mobile).
+
+---
+
+## 🚀 Teknologi yang Digunakan
+
+| Bagian     | Teknologi            |
+|------------|----------------------|
+| ⚛️ Frontend | [React JS](https://reactjs.org/) |
+| ⚡ Build Tool | [Vite](https://vitejs.dev/)      |
+| 🎨 Styling  | [CSS / Tailwind CSS](https://tailwindcss.com/) *(jika digunakan)* |
+
+---
+
+## 📬 Kontak
+📧 Email: ilhamm778866@gmail.com
+
